@@ -1,0 +1,133 @@
+# Deployment & Next Steps — notforprofitaccountant.com
+
+Reference for getting the site live at `notforprofitaccountant.com` and configured for search.
+
+---
+
+## Current state
+
+- ✅ Code is on GitHub: [github.com/acebizcspartners/Not-for-profit-accountant](https://github.com/acebizcspartners/Not-for-profit-accountant)
+- ✅ Branch: `main`
+- ✅ Phone CTAs route to `0431 516 784`
+- ✅ Schema.org JSON-LD targets Hills District + Central Coast NSW
+- ❌ Site is **not yet hosted** — pick a host below
+- ❌ DNS for `notforprofitaccountant.com` not pointed yet
+- ❌ Google Search Console + Google Business Profile not yet claimed
+
+---
+
+## Step 1 — Pick a host
+
+The site is pure static HTML/CSS/JS.
+
+| Host | Free tier | Why pick it |
+|---|---|---|
+| **Cloudflare Pages** | Unlimited | Fastest CDN, simple DNS if you also use Cloudflare for the domain |
+| **Vercel** | 100 GB/mo | Best DX, instant previews on every commit |
+| **Netlify** | 100 GB/mo | Built-in form handling (replaces `mailto:`) |
+| **GitHub Pages** | Free, but **requires public repo** on free plan | Simplest if you flip the repo to public |
+
+**Recommendation:** Cloudflare Pages.
+
+---
+
+## Step 2 — Connect the repo
+
+### Cloudflare Pages
+
+1. [dash.cloudflare.com](https://dash.cloudflare.com) → Workers & Pages → Create application → Pages → Connect to Git.
+2. Authorise GitHub, pick `acebizcspartners/Not-for-profit-accountant`.
+3. Build settings: framework **None**, build command blank, output dir `/`.
+4. Save and Deploy. ~30 seconds → `*.pages.dev` URL.
+
+### Vercel
+
+1. [vercel.com/new](https://vercel.com/new) → Import Git Repository → pick the repo.
+2. Framework Preset: **Other**. No build command, output dir `/`.
+3. Deploy.
+
+### Netlify
+
+1. [app.netlify.com/start](https://app.netlify.com/start) → Import from Git → pick the repo.
+2. No build command. Publish directory: `/`.
+3. Deploy.
+
+---
+
+## Step 3 — Point the domain
+
+1. Buy `notforprofitaccountant.com` at any registrar.
+2. In the registrar's DNS panel, add records the host shows you (typically a CNAME and an A record).
+3. Add both apex and `www` subdomains, pick which redirects.
+4. Wait 5–60 minutes for DNS propagation. Most hosts auto-issue Let's Encrypt SSL.
+
+---
+
+## Step 4 — Post-deploy SEO
+
+### Google Search Console
+
+1. [search.google.com/search-console](https://search.google.com/search-console) → Add property → URL prefix → `https://notforprofitaccountant.com`.
+2. Verify via DNS TXT record.
+3. Submit sitemap when generated.
+
+### Google Business Profile (Hills local pack)
+
+1. [google.com/business](https://google.com/business) → Add business.
+2. Trading name: `Not-For-Profit Accountant`.
+3. Address: `Suite 204, 11 Solent Circuit, Norwest NSW 2153`.
+4. Phone: `0431 516 784`. Hours: Mon–Fri 9am–5pm.
+5. Categories: **Accountant** + **Tax preparation service**.
+6. Verification by postcard takes 5–14 days.
+
+**Note:** You already have GBPs (or will) for Builder Accountant and Property Tax Agent at the same address. Google may flag duplicate listings. Use distinct trading names, distinct categories, and consider creating a single hub GBP for Ace Biz + service-area pages for each sub-brand if duplicate flags appear.
+
+### Rich-result validation
+
+Paste the live URL into [search.google.com/test/rich-results](https://search.google.com/test/rich-results). Expect Local Business + FAQPage panels.
+
+---
+
+## Optional next builds
+
+- [ ] **Generate `sitemap.xml` + `robots.txt`**
+- [ ] **Add `404.html`** custom not-found page
+- [ ] **Wire `mailto:` forms to a real backend** (Formspree / Netlify Forms / Cloudflare Worker)
+- [ ] **Add `og-image.png`** (1200×630 designed share image)
+- [ ] **Add real square `logo.png`** referenced by JSON-LD
+- [ ] **Build more service landing pages** (e.g. `/services/dgr-endorsement/`, `/services/fbt-salary-packaging/`, `/services/charity-audit/`)
+- [ ] **Add Google Analytics 4 or Plausible**
+
+---
+
+## Pushing future changes
+
+```sh
+git -C "C:\Users\AnkitKulshrestha\notforprofitaccountant.com" add <files>
+git -C "C:\Users\AnkitKulshrestha\notforprofitaccountant.com" commit -m "Short description"
+git -C "C:\Users\AnkitKulshrestha\notforprofitaccountant.com" push
+```
+
+If you've connected the repo to a host, the push auto-deploys.
+
+---
+
+## Quick reference
+
+| Thing | Value |
+|---|---|
+| Repo | github.com/acebizcspartners/Not-for-profit-accountant |
+| Branch | `main` |
+| Local path | `C:\Users\AnkitKulshrestha\notforprofitaccountant.com` |
+| Domain | `notforprofitaccountant.com` (not yet purchased / pointed) |
+| Phone | `0431 516 784` (international: `+61 431 516 784`) |
+| Email | `admin@acebiz.com.au` |
+| Office | Suite 204, 11 Solent Circuit, Norwest NSW 2153 |
+| Parent firm | Ace Biz — ABN 89 168 839 076 |
+| Pricing | Small NFP from $1,200/yr · Medium/DGR from $3,500/yr · Large quoted |
+| ACNC reporting | From $1,200/yr |
+| Service areas | Hills District + Central Coast NSW (cloud-native national) |
+
+---
+
+*Generated by Claude — keep this file in the repo so it travels with the project.*
