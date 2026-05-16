@@ -8,7 +8,7 @@ Reference for getting the site live at `notforprofitaccountant.com` and configur
 
 - ✅ Code is on GitHub: [github.com/acebizcspartners/Not-for-profit-accountant](https://github.com/acebizcspartners/Not-for-profit-accountant)
 - ✅ Branch: `main`
-- ✅ Phone CTAs route to `0431 516 784`
+- ✅ Phone CTAs route to `0431 516 783`
 - ✅ Schema.org JSON-LD targets Hills District + Central Coast NSW
 - ❌ Site is **not yet hosted** — pick a host below
 - ❌ DNS for `notforprofitaccountant.com` not pointed yet
@@ -76,7 +76,7 @@ The site is pure static HTML/CSS/JS.
 1. [google.com/business](https://google.com/business) → Add business.
 2. Trading name: `Not-For-Profit Accountant`.
 3. Address: `Suite 204, 11 Solent Circuit, Norwest NSW 2153`.
-4. Phone: `0431 516 784`. Hours: Mon–Fri 9am–5pm.
+4. Phone: `0431 516 783`. Hours: Mon–Fri 9am–5pm.
 5. Categories: **Accountant** + **Tax preparation service**.
 6. Verification by postcard takes 5–14 days.
 
@@ -120,7 +120,7 @@ If you've connected the repo to a host, the push auto-deploys.
 | Branch | `main` |
 | Local path | `C:\Users\AnkitKulshrestha\notforprofitaccountant.com` |
 | Domain | `notforprofitaccountant.com` (not yet purchased / pointed) |
-| Phone | `0431 516 784` (international: `+61 431 516 784`) |
+| Phone | `0431 516 783` (international: `+61 431 516 783`) |
 | Email | `admin@acebiz.com.au` |
 | Office | Suite 204, 11 Solent Circuit, Norwest NSW 2153 |
 | Parent firm | Ace Biz — ABN 89 168 839 076 |
