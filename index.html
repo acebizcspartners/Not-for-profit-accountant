@@ -828,11 +828,39 @@
               pattern="[0-9 ]+" title="Only numbers allowed" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')">
           </label>
         </div>
-        <label><span>Organisation name &amp; type</span><input type="text" name="org" placeholder="e.g. Hills Community Care Inc. (ACNC charity, DGR)"></label>
-        <label><span>What's going on?</span><textarea name="message" rows="3" placeholder="A line or two is fine. We'll call you back."></textarea></label>
-        <button type="submit" class="btn btn-dark btn-block btn-lg">Send — we'll call you back today</button>
-        <p class="form-fineprint">By submitting you agree to be contacted by Not-For-Profit Accountant. We never share your details.</p>
-      </form>
+         <label><span>Organisation name &amp; type</span><input type="text" name="org" placeholder="e.g. Hills Community Care Inc. (ACNC charity, DGR)"></label>
+         <label><span>What's going on?</span><textarea name="message" rows="3" placeholder="A line or two is fine. We'll call you back."></textarea></label>
+         <button type="submit" class="btn btn-dark btn-block btn-lg">Send — we'll call you back today</button>
+         <p class="form-fineprint">By submitting you agree to be contacted by Not-For-Profit Accountant. We never share your details.</p>
+       </form>
+       <div id="form-success" style="display:none;color:green;margin-top:10px;">Thank you! Your message has been sent.</div>
+       <script>
+       document.querySelector('.lead-form').addEventListener('submit', async function(e) {
+         e.preventDefault();
+         const form = e.target;
+         const data = {
+           name: form.name.value,
+           phone: form.phone.value,
+           org: form.org.value,
+           message: form.message.value
+         };
+         try {
+           const res = await fetch('/send', {
+             method: 'POST',
+             headers: { 'Content-Type': 'application/json' },
+             body: JSON.stringify(data)
+           });
+           if (res.ok) {
+             form.reset();
+             document.getElementById('form-success').style.display = 'block';
+           } else {
+             alert('There was an error sending your message.');
+           }
+         } catch (err) {
+           alert('There was an error sending your message.');
+         }
+       });
+       </script>
     </div>
   </div>
 </section>
