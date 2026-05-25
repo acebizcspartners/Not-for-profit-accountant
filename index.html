@@ -819,8 +819,14 @@
       <div class="final-or">or send a quick message</div>
       <form class="lead-form" action="mailto:admin@acebiz.com.au?subject=NFP%20Accounting%20Enquiry" method="post" enctype="text/plain">
         <div class="row">
-          <label><span>Your name &amp; role</span><input type="text" name="name" required autocomplete="name" placeholder="e.g. Sarah Lee, Treasurer"></label>
-          <label><span>Phone</span><input type="tel" name="phone" required autocomplete="tel" placeholder="04xx xxx xxx"></label>
+          <label><span>Your name &amp; role</span>
+            <input type="text" name="name" required autocomplete="name" placeholder="e.g. Sarah Lee, Treasurer"
+              pattern="[A-Za-z ,]+" title="Only letters, spaces, and commas allowed" oninput="this.value=this.value.replace(/[^A-Za-z ,]/g,'')">
+          </label>
+          <label><span>Phone</span>
+            <input type="tel" name="phone" required autocomplete="tel" placeholder="04xx xxx xxx"
+              pattern="[0-9 ]+" title="Only numbers allowed" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')">
+          </label>
         </div>
         <label><span>Organisation name &amp; type</span><input type="text" name="org" placeholder="e.g. Hills Community Care Inc. (ACNC charity, DGR)"></label>
         <label><span>What's going on?</span><textarea name="message" rows="3" placeholder="A line or two is fine. We'll call you back."></textarea></label>
